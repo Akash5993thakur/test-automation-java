@@ -17,56 +17,5 @@
         </classes>
     </test>
 
-    <test name="Safari Tests">
-        <parameter name="browserName" value="Safari"/>
-        <groups>
-            <run>
-                <include name="web"/>
-            </run>
-        </groups>
-
-        <classes>
-            <!--<class name="tests.HomePageTests" />-->
-        </classes>
-    </test>
-
-    <test name="Firefox Tests">
-        <parameter name="browserName" value="Firefox"/>
-        <groups>
-            <run>
-                <include name="web"/>
-            </run>
-        </groups>
-
-        <classes>
-            <!--<class name="tests.HomePageTests" />-->
-        </classes>
-    </test> <!-- Test -->
-
-    <test name="IE Tests">
-        <parameter name="browserName" value="InternetExplorer"/>
-        <groups>
-            <run>
-                <include name="web"/>
-            </run>
-        </groups>
-
-        <classes>
-        </classes>
-    </test>
-
-    <test name="Edge Tests">
-        <parameter name="browserName" value="Edge"/>
-        <groups>
-            <run>
-                <include name="web"/>
-            </run>
-        </groups>
-
-        <classes>
-            <!--<class name="tests.HomePageTests" />-->
-        </classes>
-    </test>
-
 
 </suite> <!-- Suite -->

@@ -2,6 +2,7 @@ package helper;
 
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
@@ -27,17 +28,17 @@ public class Browser {
 
     private void Initialise(String browser) {
         capabilities = new DesiredCapabilities();
-        seleniumFolderPath = System.getProperty("user.home") + "/Documents/umservices/selenium3/";
+        //seleniumFolderPath = System.getProperty("C://Users//akash//Downloads//Visa//Visa//Documents//umservices//selenium3//chromedriver//");
 
         switch (browser) {
             case "Chrome":
                 ChromeOptions chrome_options = new ChromeOptions();
                 chrome_options.addArguments("--disable-geolocation");
                 chrome_options.addArguments("--incognito");
-                System.setProperty("webdriver.chrome.driver", seleniumFolderPath + "chromedriver");
+                System.setProperty("webdriver.chrome.driver","C:\\Users\\akash\\Downloads\\chromedriver-win32\\chromedriver-win32\\chromedriver.exe");
                 capabilities.setBrowserName("chrome");
                 capabilities.setCapability(ChromeOptions.CAPABILITY, chrome_options);
-//                _driver = new ChromeDriver(capabilities);
+            _driver = new ChromeDriver(capabilities);
                 break;
             case "Safari":
                 capabilities.setBrowserName("safari");
@@ -74,11 +75,10 @@ public class Browser {
                 break;
         }
 
-        try {
-            _driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"), capabilities);
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
+		/*
+		 * try { _driver = new RemoteWebDriver(new URL("http://0.0.0.0:4444/wd/hub"),
+		 * capabilities); } catch (MalformedURLException e) { e.printStackTrace(); }
+		 */
         _driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
